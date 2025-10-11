@@ -2,12 +2,19 @@
 
 ISBN 2 7296 0254 2.
 
-Proposition de corrigés des exercices de ce livre.
+Proposition de corrigés des exercices de ce livre.  
 Les résultats sont imprimés, quand c'est possible, sur le fichier.
 
-Certains fichiers annexes sont présents pour simplifier les programmes,
+Certains fichiers annexes sont présents pour simplifier les programmes, 
 mais la plupart du temps les programmes sont autonomes et compilables tel que.
 
+# A faire:
+
+Certains exercices ne sont pas totalement correts :
+
+Chap 2 -> 10 : la programmation fortran n'est pas exacte.
+
+Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
 ## BASES
 
