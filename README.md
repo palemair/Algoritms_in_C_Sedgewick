@@ -8,7 +8,7 @@ Les résultats sont imprimés, quand c'est possible, sur le fichier.
 Certains fichiers annexes sont présents pour simplifier les programmes, 
 mais la plupart du temps les programmes sont autonomes et compilables tel que.
 
-# A faire:
+### A faire:
 
 Certains exercices ne sont pas totalement correts :
 
@@ -38,7 +38,4 @@ Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
 - [ ] Chapitre 9 : Le tri rapide (Quicksort).
 
-- [ ] Chapitre 10 : Tr basique.
-
-
-
+- [ ] Chapitre 10 : Tris basiques.
