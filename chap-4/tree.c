@@ -82,7 +82,6 @@ void postorder(node tree)
     }
 }
 
-
 void postorder_iter(node pt)
 {
   struct Node * p2 = NULL;
@@ -165,43 +164,6 @@ int hauteur(struct Node * pt)
     }
     return (1 + rmax(hauteur(pt->L) , hauteur(pt->R)));
 }
-
-
-void infixe_it(node pt)
-{
-g : if(pt == NULL) goto d;
-    empiler(pt);
-    pt = pt->L;
-    goto g;
-
-d : if(pile_vide()) goto x;
-    pt = depiler();
-    printf("-> %c | ",pt->data);
-    pt = pt->R;
-    goto g;
-
-x : puts("");
-}
-
-void infixe_2(node pt)
-{
-    empiler(pt);
-    while(!pile_vide()) 
-    {
-        while(pt != NULL)
-        {
-            empiler(pt);
-            pt = pt->L;
-        }
-
-        pt = depiler();
-        printf(" (%c) |",pt->data);
-        pt = pt->R;
-    }
-
-    printf("\n");
-}
-
 
 static int y = -1;
 
