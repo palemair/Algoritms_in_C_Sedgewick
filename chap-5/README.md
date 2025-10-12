@@ -10,5 +10,10 @@
 
 4. Donnez les coordonnées engendrées par le programme récursif de dessin d'arbre appliqué à l'arbre binaire de la figure 4.2
 
+5. Supprimez de manière mécanique la récursion du programme `Fibonacci` présenté dans le texte pour obtenir une version itérative.
+
+6. Supprimez de manière mécanique la récursion du programme `Infixe` présenté dans le texte pour obtenir une version itérative.
+
+7. Supprimez de manière mécanique la récursion du programme `Postfixe` présenté dans le texte pour btenir une version itérative.
 
 8. Ecrivez un programme récursif de type diviser pour résoudre pour dessiner une approximation de droite.
