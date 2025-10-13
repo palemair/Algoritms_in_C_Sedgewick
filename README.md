@@ -26,7 +26,7 @@ Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
 - [x] Chapitre 4 : Arbres.
 
-- [ ] Chapitre 5 : Récursion.
+- [x] Chapitre 5 : Récursion.
 
 - [ ] Chapitre 6 : Analyse de complexité.
 
