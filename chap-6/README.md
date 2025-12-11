@@ -3,10 +3,10 @@
 1. Supposons que la complexité en temps d'un algorithme soit dans *O(N LogN)* et celle d'un autre dans *O(N<sup>3</sup>)*.
     Que peut-on dire de leurs performances comparées ?
 
-2. Supposons que la complexité en temps d'un algorithme soit **toujours** de l'ordre de *O(N LogN)* et celle d'un autre dans *O(N<sup>3</sup>)*.
+2. Supposons que la complexité en temps d'un algorithme soit toujours **de l'ordre de O(N LogN)** et celle d'un autre dans *O(N<sup>3</sup>)*.
     Que peut-on dire de leurs performances comparées ?
 
-2. Supposons que la complexité en temps d'un algorithme soit **toujours** de l'ordre de *O(N LogN)* et celle d'un autre **toujours** de l'ordre de *O(N<sup>3</sup>)*.
+2. Supposons que la complexité en temps d'un algorithme soit toujours **de l'ordre de O(N LogN)** et celle d'un autre toujours **de l'ordre de O(N<sup>3</sup>)**.
     Que peut-on dire de leurs performances comparées ?
 
 4. Expliquez la différence entre *O(1)* et *O(2)*.
