@@ -23,9 +23,9 @@ int main ()
 }
 
 /* on peut estimer le temps à :
- *  10 x 0,0006 pour la première boucle : 0.006
- *  + (10 x 10 x 0.0006) pour la boucle 2 imbriquée.
- *  soit O.066 s pour N = 1 million*/ 
+ *  10 x 0,0004 pour la première boucle : 0.004
+ *  + (10 x 10 x 0.0004) pour la boucle 2 imbriquée.
+ *  soit O.044 s pour N = 1 million*/ 
 
  /* Resultats : 
 
