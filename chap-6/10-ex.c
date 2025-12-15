@@ -32,37 +32,19 @@ int main ()
 
     for(size_t u = 0;u < (sizeof(d) / sizeof d[0]);u++)
     {
-        printf("N = %d : rlog2 = %ld \n",d[u],rxlog2(d[u]));
-        printf("N = %d : rlog2 = %ld | ilog2 = %ld | log2 = %ld \n",d[u],rxlog2(d[u]),ixlog2(d[u]), (long int)pow(2,d[u]));
-        printf("N = %d : rlog2 = %ld | ilog2 = %ld | log2 = %ld \n",d[u],rxlog2(d[u]),ixlog2(d[u]), (long int)pow(2,d[u]));
+        printf("N = %3d : rlog2 = %12ld | ilog2 = %12ld | log2(C) = %12ld \n",d[u],rxlog2(d[u]),ixlog2(d[u]), (long int)pow(2,d[u]));
     }
 
 }
 
  /* Resultats : 
 
-N = 1 : rlog2 = 2 
-N = 1 : rlog2 = 2 | ilog2 = 2 | log2 = 2 
-N = 1 : rlog2 = 2 | ilog2 = 2 | log2 = 2 
-N = 2 : rlog2 = 4 
-N = 2 : rlog2 = 4 | ilog2 = 4 | log2 = 4 
-N = 2 : rlog2 = 4 | ilog2 = 4 | log2 = 4 
-N = 3 : rlog2 = 8 
-N = 3 : rlog2 = 8 | ilog2 = 8 | log2 = 8 
-N = 3 : rlog2 = 8 | ilog2 = 8 | log2 = 8 
-N = 4 : rlog2 = 16 
-N = 4 : rlog2 = 16 | ilog2 = 16 | log2 = 16 
-N = 4 : rlog2 = 16 | ilog2 = 16 | log2 = 16 
-N = 8 : rlog2 = 256 
-N = 8 : rlog2 = 256 | ilog2 = 256 | log2 = 256 
-N = 8 : rlog2 = 256 | ilog2 = 256 | log2 = 256 
-N = 12 : rlog2 = 4096 
-N = 12 : rlog2 = 4096 | ilog2 = 4096 | log2 = 4096 
-N = 12 : rlog2 = 4096 | ilog2 = 4096 | log2 = 4096 
-N = 16 : rlog2 = 65536 
-N = 16 : rlog2 = 65536 | ilog2 = 65536 | log2 = 65536 
-N = 16 : rlog2 = 65536 | ilog2 = 65536 | log2 = 65536 
-N = 32 : rlog2 = 4294967296 
-N = 32 : rlog2 = 4294967296 | ilog2 = 4294967296 | log2 = 4294967296 
-N = 32 : rlog2 = 4294967296 | ilog2 = 4294967296 | log2 = 4294967296 
+N =   1 : rlog2 =            2 | ilog2 =            2 | log2(C) =            2 
+N =   2 : rlog2 =            4 | ilog2 =            4 | log2(C) =            4 
+N =   3 : rlog2 =            8 | ilog2 =            8 | log2(C) =            8 
+N =   4 : rlog2 =           16 | ilog2 =           16 | log2(C) =           16 
+N =   8 : rlog2 =          256 | ilog2 =          256 | log2(C) =          256 
+N =  12 : rlog2 =         4096 | ilog2 =         4096 | log2(C) =         4096 
+N =  16 : rlog2 =        65536 | ilog2 =        65536 | log2(C) =        65536 
+N =  32 : rlog2 =   4294967296 | ilog2 =   4294967296 | log2(C) =   4294967296 
 */
