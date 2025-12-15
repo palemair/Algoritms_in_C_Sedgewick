@@ -23,7 +23,7 @@ void reccurence(int x)
   printf("log2(x) : %.2f\n",log2(x));
 }
 
-void recc(int x)
+void recc(double x)
 {
   double cumul = 0;
 

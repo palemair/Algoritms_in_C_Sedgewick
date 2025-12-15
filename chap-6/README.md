@@ -15,3 +15,13 @@
 
     *C<sub>N</sub> = C<sub>N/2</sub> + N<sup>2</sup>, pour N >= 2 et C<sub>1</sub> = 0.*
     lorsque N est une puissance de 2.
+
+6. Pour Quelle valeurs de N on a $$10NlgN>2N^2$$ ?:
+
+7. Ecrivez un programme pour calculer la valeur exacte de Cn dans la formule 2 et comparer à log N.
+
+8. Demontrez que la solution exacte de la formule 2 est lgN + O(1)
+
+9. Ecrivez un programme récursif permettant de calculer le plus grand entier inférieur ou égal à log2 N.
+
+10. Ecrivez un programme itératif pour l'exercice précédent. et comparer aux lib C mathématiques.
