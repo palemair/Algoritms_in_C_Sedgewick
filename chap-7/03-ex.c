@@ -29,6 +29,5 @@ int main ()
 
  /* Resultats : 
 
-
 temps mesuré sans printf : 0.156974 s
 */

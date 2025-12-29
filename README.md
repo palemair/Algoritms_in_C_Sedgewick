@@ -12,7 +12,7 @@ mais la plupart du temps les programmes sont autonomes et compilables tel que.
 
 Certains exercices ne sont pas totalement correts :
 
-Chap 2 -> 10 : la programmation fortran n'est pas exacte.
+Chap 2 -> 10 : la programmation fortran n'est ni mon fort ni exacte.
 
 Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
