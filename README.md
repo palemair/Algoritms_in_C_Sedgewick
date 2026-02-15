@@ -30,7 +30,7 @@ Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
 - [x] Chapitre 6 : Analyse de complexité.
 
-- [ ] Chapitre 7 : Implantation d'algorithmes.
+- [x] Chapitre 7 : Implantation d'algorithmes.
 
 ## TRIS
 
