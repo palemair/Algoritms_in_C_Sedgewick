@@ -20,7 +20,7 @@ du chap 5 (avec un accès direct à la pile) rend le programme plus efficace.
 7. Examinez le programme en langage machine produit par le compilateur C de votre système pour
 l'algorthme de parcours préfixé d'arbre du parcours d'arbre du chap 5.
 
-8. Imanginez un moyen de tester si l'implantation d'un pile par liste chainée est plus performante 
+8. Imaginez un moyen de tester si l'implantation d'un pile par liste chainée est plus performante 
 qu'une implantation par tableau dans votre environnement de programmation.
 
 9. Est-ce la méthode récursive ou itérative la plus rapide pour la graduation d'une règle chap 5 ?
