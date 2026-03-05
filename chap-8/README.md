@@ -19,4 +19,4 @@ les clés de la chaine QUESTIONFACILE ?
 7. Donnez un exemple simple montrant pourquoi 8, 4, 2, 1 n'est pas un 
 bon candidat pour terminer une suite d'incréments du tri shell ?
 
-
+8. Le tri par selection est-il stable ? même question pour celui par insertion et à bulles.

@@ -129,6 +129,7 @@ int main ()
 
 }
 
+
  /* Resultats : 
 
 time for fnct tri insertion   : 0.000018 
