@@ -20,3 +20,10 @@ les clés de la chaine QUESTIONFACILE ?
 bon candidat pour terminer une suite d'incréments du tri shell ?
 
 8. Le tri par selection est-il stable ? même question pour celui par insertion et à bulles.
+
+9. Donnez une version spécialisée de comptage d'occurences permettant de trier un fichier dont
+    les éléments sont égaux à une valeur parmi 2 possibles (x ou y).
+
+10. Testez différentes suites d'incréments pour le tri shell : 
+    donnez une suite s'accompagnant de meilleures performances que celles relatives à la suite
+    donnée pour un fichier de 1000 éléments aléatoires.

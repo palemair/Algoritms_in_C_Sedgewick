@@ -133,10 +133,13 @@ BCEDFETAB
    8   1   9   2   4   3   6   5   7
 
   Sur cet exemple on constate que le tri selection n'est pas stable :
-  l'echange de valeur envoi la case evaluée à une position aléatoire.
+  l'echange de valeur envoit la case evaluée à une position aléatoire, c'est à dire
+  à l'emplacement du plus petit élément (a priori n'importe ou)..
   
   En revanche les tris bulles et insertion conserve l'ordre relatif des éléments
   chaque valeur est 'controlée' pour atteindre sa position 'définitive' :
     relative aux éléments déjà triés -> insertion
     absolue -> bulles
+
+    il n'y a pas de déplacement "incontrolé". 
 */
