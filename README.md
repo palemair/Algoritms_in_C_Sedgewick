@@ -34,7 +34,7 @@ Chap 4 -> 07 & 08 : Je ne suis pas sur de comprendre le but de l'exercice.
 
 ## TRIS
 
-- [ ] Chapitre 8 : Methodes de tri élémentaires.
+- [x] Chapitre 8 : Methodes de tri élémentaires.
 
 - [ ] Chapitre 9 : Le tri rapide (Quicksort).
 
