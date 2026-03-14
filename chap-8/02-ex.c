@@ -12,25 +12,8 @@
 typedef clock_t* timer;
 
 /* Le tri selection ne dépend pas de l'ordre des données donc il reste en N2. */
-/* le tri bulles également. */
-/* le tri selection est linéaire dans ce cas */
-
-/* Mélange par permutation d'un tableau C fisher-yates*/
-void melange (void* tb, size_t sizetb, size_t size)
-{
-    srand (time (NULL));
-    unsigned char* ptr = tb;
-    unsigned char temp[size];
-    unsigned int j = 0;
-
-    for (size_t i = sizetb - 1; i > 0; i--)
-    {
-        j = rand () % i;
-        memcpy (temp, (ptr + (size * i)), size);
-        memcpy ((ptr + (size * i)), (ptr + (size * j)), size);
-        memcpy ((ptr + (size * j)), temp, size);
-    }
-}
+/* le tri insertion est linéaire dans ce cas : aucun échange et N comparaisons*/
+/* le tri bulles est un mixte entre les 2 : il y aura le même nb de comparaisons mais pas d'échanges. */
 
 clock_t* init_timer(void)
 {
@@ -104,12 +87,10 @@ int tri_insertion (int* t, size_t nbelem)
     return EXIT_SUCCESS;
 }
 
-
 int main ()
 {
     int t[MAX];
     for(int u = 0; u<MAX;u++) t[u]=u;
-    /* melange(t,MAX,sizeof t[0]); */
     PRINTAB;
     
     timer A = init_timer();
@@ -128,7 +109,6 @@ int main ()
     delta_t(C,D,"tri selection");
 
 }
-
 
  /* Resultats : 
 

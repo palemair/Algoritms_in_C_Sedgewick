@@ -7,29 +7,12 @@
 /* pour un fichier en ordre inverse ? */
 
 #define MAX 1000
-#define PRINTAB for(int u = 0; u<MAX;u++) {printf("%4d",t[u]);putchar(u%30?' ':'\n');}printf("\n\n")
+#define PRINTAB for(int u = 0; u<MAX;u++) {printf("%4d",t[u]);putchar((u%30)?' ':'\n');}printf("\n\n")
 
 typedef clock_t* timer;
 
 /* Dans ce cas le tri par insertion devient plus lent, alors que les autres tri ne sont */
 /* que peu affectés. */
-
-/* Mélange par permutation d'un tableau C fisher-yates*/
-void melange (void* tb, size_t sizetb, size_t size)
-{
-    srand (time (NULL));
-    unsigned char* ptr = tb;
-    unsigned char temp[size];
-    unsigned int j = 0;
-
-    for (size_t i = sizetb - 1; i > 0; i--)
-    {
-        j = rand () % i;
-        memcpy (temp, (ptr + (size * i)), size);
-        memcpy ((ptr + (size * i)), (ptr + (size * j)), size);
-        memcpy ((ptr + (size * j)), temp, size);
-    }
-}
 
 clock_t* init_timer(void)
 {
@@ -107,7 +90,7 @@ int tri_insertion (int* t, size_t nbelem)
 int main ()
 {
     int t[MAX];
-    int x = MAX;
+    int x = MAX-1;
     for(int u = 0; u<MAX;u++,x--) t[u]=x;
     PRINTAB;
     

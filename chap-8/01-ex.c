@@ -19,6 +19,7 @@ void tri4(char* t) {
 
     if(t[2] > t[4])
         {q =t[2]; t[2] = t[4]; t[4] = q;}
+
     if(t[3] > t[4])
         {q =t[3]; t[3] = t[4]; t[4] = q;}
 }
@@ -40,12 +41,6 @@ int main()
     putchar('\n');
 }
 
-
- /* Resultats : 
-
-D C B A 
-A B C D 
-*/
 
  /* Resultats : 
 
