@@ -1,6 +1,78 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "utils.h"
+
+#define MAXPILE 200
+#define MAXFILE 200
+
+static int tpile[MAXPILE + 1];
+static int tfile[MAXFILE + 1];
+
+static int sp = -1;
+static int debut = 0;
+static int fin = 0;
+
+bool pile_vide(void)
+{
+    return sp == -1;
+}
+
+bool empiler(int v)
+{
+   if(sp < MAXPILE)
+   {
+       tpile[++sp] = v;
+       return true;
+   }
+   return false;
+}
+
+int depiler(void)
+{
+   if(!pile_vide())
+   {
+       return tpile[sp--];
+   }
+   return -1;
+}
+
+void print_pile(void)
+{
+    printf(" Pile : ");
+    for(int u=0;u<=sp;u++) printf("%d -",tpile[u]);
+    printf("\n");
+}
+
+bool file_vide(void)
+{
+    return debut == fin;
+}
+
+void enfiler(int v)
+{
+   if(v)
+   {
+       tfile[fin++] = v;
+   }
+
+   if(fin > MAXFILE) fin = 0;
+}
+
+int defiler(void)
+{
+    int t = tfile[debut++];
+
+    if(debut > MAXFILE) debut = 0;
+    return t;
+}
+
+void print_file(void)
+{
+    printf(" File : ");
+    for(int u=fin-1;u>=debut;u--) printf("%d -",tfile[u]);
+    printf("\n");
+}
 
 timer init_timer(void)
 {
@@ -39,6 +111,7 @@ void melange (void* tb, size_t sizetb, size_t size)
 bool sorted(int *t, int len)
 {
     for(int i=0;i<len;i++) if(t[i]!=i) return false;
+    puts("liste triée : OK !!");
     return true;
 }
 
