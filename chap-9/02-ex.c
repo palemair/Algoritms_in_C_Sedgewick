@@ -3,6 +3,9 @@
 #include <string.h>
 #include "utils.h"
 
+#define MAX 855
+#define M 24
+
 int partitionner(int *tab, int l, int r)
 {
      int pivot = tab[r];
@@ -25,15 +28,33 @@ int partitionner(int *tab, int l, int r)
      return i;
  }
 
-#define MAX 885
+int insertsort (int* t, int nbelem)
+{
+    int i,j,q;
 
-void trirapide2(int *tab,int N)
+    for (i = 1; i < nbelem; i++)
+    {
+        q=t[i];
+        j=i;
+        while (j>0 && q < t[j-1]) j--;
+        memmove (t + j + 1 , t + j, (i-j) * sizeof (int));
+        t[j] = q;
+    }
+    return EXIT_SUCCESS;
+}
+
+
+void trirapide_goto(int *tab,int N)
 {
     int i;
     int l = 0;
     int r = N -1;
 
-y : if(l>=r) goto x;
+y : if(r-l<M)
+    {
+        insertsort(tab+l,r-l+1);
+        goto x;
+    }
    
     i = partitionner(tab,l,r);
     empiler(r);
@@ -50,7 +71,32 @@ x: if(pile_vide()) goto z;
 z: ;
 }
 
-int main()
+void trirapide2(int *tab,int N)
+{
+    int i;
+    int l = 0;
+    int r = N -1;
+
+    while(1)
+    {
+        while(r-l>=M)
+        {
+            i = partitionner(tab,l,r);
+            empiler(r);
+            empiler(i+1);
+        
+            r = i-1;
+        }
+
+        insertsort(tab + l, r-l+1);
+
+        if(pile_vide()) break;
+        l=depiler();
+        r=depiler();
+    } 
+}
+
+int main(void)
 {
     int t[MAX];
     for(int u = 0; u<MAX;u++) t[u]=u;
@@ -61,6 +107,7 @@ int main()
     trirapide2(t,MAX);
 
     sorted(t,MAX);
+    PRINTAB(t,MAX);
 
     return EXIT_SUCCESS;
 }

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "utils.h"
 
-#define MAXPILE 200
+#define MAXPILE 9200
 #define MAXFILE 200
 
 static int tpile[MAXPILE + 1];
@@ -110,7 +110,12 @@ void melange (void* tb, size_t sizetb, size_t size)
 /* Fonction de vérification q'un tableau d'entier est correctement trié*/
 bool sorted(int *t, int len)
 {
-    for(int i=0;i<len;i++) if(t[i]!=i) return false;
+    for(int i=0;i<len;i++) 
+        if(t[i]!=i) 
+        {
+            puts("Tri non correct !!");
+            return false;
+        }
     puts("liste triée : OK !!");
     return true;
 }

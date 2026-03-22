@@ -1,29 +1,29 @@
-# Chapitre 8 :
+# Chapitre 9 :
 
-1. Donnez une suite d'opérations d'échanges comparaisons pour 4 éléments.
+1. Implantez une version récursive du tri rapide traitant les sous fichiers de taille
+ inférieur à M par un tri par insertion et déterminez de manière empirique la valeur de M
+ pour laquelle le programme est le plus efficace sur un fichier aléatire de 1000 éléments.
 
-2. Laquelle des 3 méthodes élémentaires (selection, insertion, bulles) est la plus rapide
- pour un fichier déjà ordonné ?
+2. Résoudre le même problème pour une implantation itérative.
 
-3. Laquelle des 3 méthodes élémentaires (selection, insertion, bulles) est la plus rapide
-pour un fichier en ordre inverse ?
+3. Résoudre le même problème en incluant la modification sur le médiane de trois.
 
-4. Classement des tris élémentaires pour les entiers.
+4. Quel est le nombre de comparaisons nécessaires au tri rapide pour traiter un fichier
+    de N éléments égaux ?
 
-5. Quel argument pourrait-on avancer contre l'utilisation d'une sentinelle dans le tri
+5. Quel nombre maximum de fois, pendant le tri rapide, l'élément maximal peut il être déplacé ?
 par insertion autre que celui évoqué pour le tri shell.
 
-6. Combien de comparaisons sont nécessaires pour 7-ordonner puis 3-ordonner 
-les clés de la chaine QUESTIONFACILE ?
+6. Montrez comment le fichier A B A B A B A est partitionné, suivant les 2 méthodes suggérées dans le texte.
 
-7. Donnez un exemple simple montrant pourquoi 8, 4, 2, 1 n'est pas un 
-bon candidat pour terminer une suite d'incréments du tri shell ?
+7. Combien de comparaisons sont nécessaires au tri rapide pour trier les clés de la chaine : QUESTIONFACILE ?
 
-8. Le tri par selection est-il stable ? même question pour celui par insertion et à bulles.
+8. Combien de clés sentinelles sont nécessaires si le tri par insertion est appelé directement
+    depuis le tri rapide ?
 
-9. Donnez une version spécialisée de comptage d'occurences permettant de trier un fichier dont
-    les éléments sont égaux à une valeur parmi 2 possibles (x ou y).
+9. Serait il envisageable d'utiliser une file au lieu d'une pile dans l'implantation itérative du tri rapide ?
+    Pourquoi oui ou pourquoi non ?
 
-10. Testez différentes suites d'incréments pour le tri shell : 
-    donnez une suite s'accompagnant de meilleures performances que celles relatives à la suite
-    donnée pour un fichier de 1000 éléments aléatoires.
+10. Ecrivez un programme permettant de réorganiser un fichier de manière que tous les éléments de clé égale 
+    à la médiane soient en position définitive, les éléments inférieurs à celle-ci étant toujours à sa gauche
+    ceux supérieurs à sa droite.
