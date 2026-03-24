@@ -60,7 +60,7 @@ int main()
 {
     timer A,B;
     int t[MAX];
-    int tcopy[MAX];
+    int tcopy[MAX + 1];
     double temps[ITER];
 
     int z = 0;
@@ -72,11 +72,11 @@ int main()
 
         while(x<ITER)
         {
-            memset(tcopy,0,sizeof tcopy);
-            memcpy(tcopy,t,sizeof tcopy);
+            memset(tcopy,-1,sizeof tcopy);
+            memcpy(tcopy+1,t,sizeof t);
             
             A = init_timer();
-            qsortinsert(tcopy,0,MAX-1);
+            qsortinsert(tcopy,1,MAX);
             B = init_timer();
             temps[x] = delta_t(A,B);
             x++;
@@ -100,7 +100,8 @@ int main()
 
  /* Resultats : 
 
-index min : 24
+index min : 24 sur ma machine.
+
 une tendance semble se constituer autour de 30 (de 20 à 45)
 en fixant à 30 le seuil pour passer en tri par insertion, on note une amélioration 
 de performances.

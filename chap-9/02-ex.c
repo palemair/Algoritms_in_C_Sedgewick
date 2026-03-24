@@ -3,8 +3,8 @@
 #include <string.h>
 #include "utils.h"
 
-#define MAX 855
-#define M 24
+#define MAX 40
+#define M 25
 
 int partitionner(int *tab, int l, int r)
 {
@@ -47,7 +47,7 @@ int insertsort (int* t, int nbelem)
 void trirapide_goto(int *tab,int N)
 {
     int i;
-    int l = 0;
+    int l = 1;
     int r = N -1;
 
 y : if(r-l<M)
@@ -74,7 +74,7 @@ z: ;
 void trirapide2(int *tab,int N)
 {
     int i;
-    int l = 0;
+    int l = 1;
     int r = N -1;
 
     while(1)
@@ -99,15 +99,23 @@ void trirapide2(int *tab,int N)
 int main(void)
 {
     int t[MAX];
-    for(int u = 0; u<MAX;u++) t[u]=u;
+    for(int u = 0; u<=MAX;u++) t[u]=u+1;
+    int tcpy[MAX+1];
+    tcpy[0]=0;
+
     melange(t,MAX,sizeof t[0]);
+    memcpy(tcpy+1,t,sizeof t); 
     
-    PRINTAB(t,MAX);
+    for (int x = 0; x<MAX+1; x++)
+        printf("%4d",tcpy[x]);
+    putchar('\n');
     
-    trirapide2(t,MAX);
+    
+    trirapide_goto(tcpy,MAX+1);
 
-    sorted(t,MAX);
-    PRINTAB(t,MAX);
-
+    for (int x = 0; x<MAX+1; x++)
+        printf("%4d",tcpy[x]);
+    putchar('\n');
+    
     return EXIT_SUCCESS;
 }
