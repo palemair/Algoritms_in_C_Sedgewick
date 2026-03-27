@@ -3,7 +3,9 @@
 #include <string.h>
 #include "utils.h"
 
-#define MAX 40
+/* 2. Résoudre le même problème pour une implantation itérative. */
+
+#define MAX 1000
 #define M 25
 
 int partitionner(int *tab, int l, int r)
@@ -57,10 +59,19 @@ y : if(r-l<M)
     }
    
     i = partitionner(tab,l,r);
-    empiler(r);
-    empiler(i+1);
-    
-    r = i-1;
+
+    if(i-l > r-i)
+    {
+        empiler(i-1);
+        empiler(l);
+        l = i + 1;
+    }
+    else
+    {
+        empiler(r);
+        empiler(i+1);
+        r = i-1;
+    }
     goto y;
   
 x: if(pile_vide()) goto z;
@@ -82,10 +93,18 @@ void trirapide2(int *tab,int N)
         while(r-l>=M)
         {
             i = partitionner(tab,l,r);
-            empiler(r);
-            empiler(i+1);
-        
-            r = i-1;
+            if(i-l > r-i)
+            {
+                empiler(i-1);
+                empiler(l);
+                l = i + 1;
+            }
+            else
+            {
+                empiler(r);
+                empiler(i+1);
+                r = i-1;
+            }
         }
 
         insertsort(tab + l, r-l+1);
@@ -112,6 +131,8 @@ int main(void)
     
     
     trirapide_goto(tcpy,MAX+1);
+    
+    sorted(tcpy,MAX+1);
 
     for (int x = 0; x<MAX+1; x++)
         printf("%4d",tcpy[x]);

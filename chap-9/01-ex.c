@@ -4,6 +4,10 @@
 #include <stdbool.h>
 #include "utils.h"
 
+/* 1. Implantez une version récursive du tri rapide traitant les sous fichiers de taille */
+/*  inférieur à M par un tri par insertion et déterminez de manière empirique la valeur de M */
+/*  pour laquelle le programme est le plus efficace sur un fichier aléatire de 1000 éléments. */
+
 int insertsort (int* t, int nbelem)
 {
     int i,j,q;

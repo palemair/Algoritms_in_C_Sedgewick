@@ -3,8 +3,10 @@
 #include <string.h>
 #include "utils.h"
 
+/* 3. Résoudre le même problème en incluant la modification sur le médiane de trois. */
+
 #define MAX 1000
-#define M 20
+#define M 10
 
 int insertsort (int* t, int nbelem)
 {
@@ -21,39 +23,6 @@ int insertsort (int* t, int nbelem)
     return EXIT_SUCCESS;
 }
 
-int qsort_rec(int *tab,int l,int r)
-{
-    if(r-l > M)
-    {
-     int pivot = tab[r];
-
-     int i, j, temp;
-     i = l-1;
-     j = r;
-
-     while(1)
-     {
-         while(tab[++i]<pivot);
-         while(tab[--j]>pivot);
-         if(i>=j) break;
-         temp = tab[i];
-         tab[i] = tab[j];
-         tab[j] = temp;
-     }
-     temp = tab[i];
-     tab[i] = tab[r];
-     tab[r] = temp;
-     qsort_rec(tab,l,i-1);
-     qsort_rec(tab,i+1,r);
-    }
-    else
-    {
-        insertsort(tab + l, r-l+1);
-    }
-
-    return 0;
-}
-
 void trirapide_med3(int *tab,int l, int r)
 {
     int i ,j, q;
@@ -61,7 +30,7 @@ void trirapide_med3(int *tab,int l, int r)
 
     while(1)
     {
-        while(r-l > M)
+        while(r-l >= M)
         {
             /* recherche de la mediane de 3 */
             m = (r+l)/2;
@@ -94,9 +63,18 @@ void trirapide_med3(int *tab,int l, int r)
             tab[i] = tab[r];
             tab[r] = q;
 
-            empiler(r);
-            empiler(i+1);
-            r = i-1;
+            if(i-l > r-i)
+            {
+                empiler(i-1);
+                empiler(l);
+                l = i + 1;
+            }
+            else
+            {
+                empiler(r);
+                empiler(i+1);
+                r = i-1;
+            }
         }
 
         insertsort(tab + l, r-l+1);
@@ -127,21 +105,5 @@ int main(void)
     printf("med %.2f µs :", delta_t(A,B));
     sorted(t,MAX);
 
-    memset(t,0,sizeof t);
-    memcpy(t,t_init,sizeof t);
-
-    A = init_timer();
-    qsort_rec(t,0,MAX-1);
-    B = init_timer();
-    
-    printf("rec %.2f µs :", delta_t(A,B));
-    sorted(t,MAX);
-
     return EXIT_SUCCESS;
 }
-
- /* Resultats : 
-
-med 155.00 µs :liste triée : OK !!
-rec 150.00 µs :liste triée : OK !!
-*/
