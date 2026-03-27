@@ -90,7 +90,7 @@ void trirapide2(int *tab,int N)
 
     while(1)
     {
-        while(r-l>=M)
+        while(r-l>=2)
         {
             i = partitionner(tab,l,r);
             if(i-l > r-i)
@@ -107,7 +107,7 @@ void trirapide2(int *tab,int N)
             }
         }
 
-        insertsort(tab + l, r-l+1);
+        /* insertsort(tab + l, r-l+1); */
 
         if(pile_vide()) break;
         l=depiler();
