@@ -3,8 +3,8 @@
 #include <string.h>
 #include "utils.h"
 
-#define MAXPILE 9200
-#define MAXFILE 200
+#define MAXPILE 300
+#define MAXFILE 300
 
 static int tpile[MAXPILE + 1];
 static int tfile[MAXFILE + 1];

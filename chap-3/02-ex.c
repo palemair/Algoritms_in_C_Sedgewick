@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* 2. Implantez une procédure DeplacerSuivantDebut ( **struct*** noeud \*t) sur une liste chainée */
+/* 2. Implantez une procédure DeplacerSuivantDebut ( struct noeud *t) sur une liste chainée */
 
 /*    qui déplace en tête de liste le noeud suivant le noeud sur lequel pointe t. */ 
 
