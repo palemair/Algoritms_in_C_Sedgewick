@@ -51,14 +51,25 @@ void trirapide_goto(int *tab,int N)
 y : if(r<=l) goto x;
    
     i = partitionner(tab,l,r);
-    enfiler(i+1);
-    enfiler(r);
-    r = i - 1;
+
+    if(i-l > r-i)
+    {
+        enfiler(i-1);
+        enfiler(l);
+        l = i + 1;
+    }
+    else
+    {
+        enfiler(r);
+        enfiler(i+1);
+        r = i-1;
+    }
+
     goto y;
   
 x: if(file_vide()) goto z;
-   l=defiler();
    r=defiler();
+   l=defiler();
    goto y;
     
 z: ;
@@ -92,4 +103,3 @@ int main(void)
 
 /* L'utilisation d'une file ne change pas le principe de l'algorithme puisqu'on enfile les sous-fichiers à traiter */
 /* chaque sous fichier est partitionné de façon indépendante */
-/* mais l'ordre est dans ce cas incertain et si on veut procéder à un tri par insertion "global", ça pourrait être génant. */
