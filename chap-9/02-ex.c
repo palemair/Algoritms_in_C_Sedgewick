@@ -129,7 +129,6 @@ int main(void)
         printf("%4d",tcpy[x]);
     putchar('\n');
     
-    
     trirapide_goto(tcpy,MAX+1);
     
     sorted(tcpy,MAX+1);
