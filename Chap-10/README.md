@@ -7,7 +7,7 @@
 2. Pourquoi n'est-il pas aussi important de supprimer la récursion du tri
    échange basique que celà l'était pour le tri rapide ?
 
-3. Transformez le tri-échange basique de manière à ignorer les bits de poids fort identique
+3. Transformez le tri-échange basique de manière à ignorer les bits de poids fort identiques
    pour toutes les clés. Dans quelles situations cette technique serait-elle avantageuse ?
 
 4. 

@@ -90,6 +90,21 @@ double delta_t(clock_t *t1,clock_t *t2)
     return res;
 }
 
+/* malloc custom to avoid error test */
+void* xmalloc (size_t size)
+{
+    void* value = NULL;
+
+    value = malloc (size);
+    if (value == NULL)
+    {
+        perror ("Virtual memory exhausted");
+        exit (EXIT_FAILURE);
+    }
+
+    return value;
+}
+
 /* Mélange par permutation d'un tableau C fisher-yates*/
 void melange (void* tb, size_t sizetb, size_t size)
 {
@@ -106,8 +121,20 @@ void melange (void* tb, size_t sizetb, size_t size)
         memcpy ((ptr + (size * j)), temp, size);
     }
 }
+/* Fonction de données aléatoires de 1 à N */
+int* randtab(int size)
+{
+    int* tb = xmalloc(size * sizeof(int));
+    for(int u=0; u<size; u++)
+        tb[u]=u+1;
+    melange(tb,size,sizeof(int));
 
-/* Fonction de vérification q'un tableau d'entier est correctement trié*/
+    return tb;
+}
+
+
+/* Fonction de vérification q'un tableau d'entier est correctement trié */ 
+
 bool sorted(int *t, int len)
 {
     for(int i=0;i<len;i++) 

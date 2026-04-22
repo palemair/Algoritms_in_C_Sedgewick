@@ -30,3 +30,7 @@ void enfiler(int v);
 int defiler(void);
 
 void print_file(void);
+
+void *xmalloc(size_t size);
+
+int *randtab(int size);

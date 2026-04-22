@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* 1. Comparez le nombre d'échanges effectués par le tri echange basique et le tri rapide */
+/*    pour un fichier constitué des clés : */
+/*    001, 011, 101, 110, 000, 001, 010, 111, 110, 010. */
+
 #define BITS(v,p) ((v>>p) & ~(~0U<<1U))
 
 unsigned char conv_binaire(char * str)
@@ -11,9 +15,8 @@ unsigned char conv_binaire(char * str)
     
     while(*str)
     {
-        ret += (*str == '1') ? k : 0;
+        ret += (*str++ == '1') ? k : 0;
         k /=2;
-        str++;
     }
     return ret;
 }
