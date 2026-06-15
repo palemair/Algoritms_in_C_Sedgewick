@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include "utils.h"
 
 /* 3. Transformez le tri-échange basique de manière à ignorer les bits de poids fort identiques */
@@ -8,13 +7,13 @@
 
 #define BITS(v,p) ((v>>p) & ~(~0U<<1U))
 
-bool isBitEqual(int *tab, int b, int l,int r)
+unsigned int isBitEqual(int *tab, int b, int l,int r)
 {
     unsigned int q = BITS(tab[l],b);
     int i = l+1;
 
-    while(i<=r) if(q^BITS(tab[i++],b)) return false;
-    return true;
+    while(i<=r) if(q^BITS(tab[i++],b)) return 0;
+    return 1;
 } 
 
 void tri_echange(int *tab,int b,int l,int r)
@@ -22,12 +21,13 @@ void tri_echange(int *tab,int b,int l,int r)
     int i, j;
     int q;
 
-    if(isBitEqual(tab,b,l,r)&& b>8)
+    if(isBitEqual(tab,b,l,r)&& b>0)
     {
         tri_echange(tab,b-1,l,r);
     }
     else
     {
+         
         if(r>l && b>=0)
         {
          i = l; j = r;
@@ -52,11 +52,12 @@ void tri_echange(int *tab,int b,int l,int r)
 int main()
 {
     int *tab = randtab(100);
-    
+
     PRINTAB(tab,100);
 
     tri_echange(tab,30,0,99);
 
+    putchar('\n');
     PRINTAB(tab,100);
 
     return EXIT_SUCCESS;
@@ -64,10 +65,10 @@ int main()
 
  /* Resultats : 
 
-67  66  69  46  24  4   94  90  25  1   73  32  37  63  30  38  74  64  36  83  58  72  62  97  86  84  13  19  88  50  33  44  61  49  98  55  76  51  92  27  82  29  28  10  89  2   26  96  68  99  9   35  18  5   56  59  79  6   34  15  8   47  21  93  12  60  95  39  52  43  42  23  65  85  70  3   80  77  31  14  7   40  78  54  41  71  100 48  22  81  17  20  75  16  87  11  53  57  91  45  
+7   84  2   42  26  86  87  61  23  62  60  51  11  34  53  77  25  17  29  89  19  40  31  21  56  90  58  30  72  73  63  27  59  5   12  93  10  37  35  74  65  81  70  24  99  75  54  79  55  43  57  47  100 68  14  95  71  83  67  97  18  15  38  28  39  80  82  94  33  16  20  3   88  50  4   22  92  13  8   98  66  49  69  48  52  96  9   32  1   85  64  41  76  36  6   46  45  91  44  78  
+
 1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100 
-  *
-  * Dans le cas de caractères ou de petits nombres, les bits de poids forts sont identiques et de valeur  0,
-  * donc il est inutile d'essayer de les ordonner.
-  *
+
+  Dans le cas de tri de caractères par exemple, les bits de poids fort sont tous nuls et il est inutile de les comparer.
+
 */
